@@ -49,4 +49,37 @@ List after insertion: 1 3 5 7 9
 // The initial linked list is . Insert  at the position  which currently has  in it. The updated linked list is .
 ```
 
+### Requirements:
+Your program must be split into 4 files: 
+- The driver program
+- The class interface (add if needed)
+- The class header file (class definition - add if needed)
+- The class implementation file.
 
+The driver program for each programming project should begin with "header comments" containing:
+```cplus
+/**
+Your name
+Programming assignment number
+A short description of the program
+Course
+The date
+*/
+
+/**
+For example:
+Programmer: TRUC HUYNH
+Project number: 2
+Project Desc: Quadratic Expression class
+Course: COSC 2436 PF III Data Structures
+Date:   01/12/2024
+*/
+```
+**note:**
+- Use a standard indentation convention in your code (see examples in textbook).
+- Use meaningful variable names.
+- **Do not use global variables.**
+- **Your class methods should not contain any input or output operations. All input and output should be done in your driver.**
+
+### Submission:
+Project will automatically clone to your github account. Please clone to your work space and work on it. Make sure you push regularly to create good habit. Your code will automatically submit to my board when you push. I will grade by due date. 
