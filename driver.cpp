@@ -1,6 +1,6 @@
 /**
 Programmer: Davos DeHoyos
-Programming Assingment: 2
+Programming Assignment: 2
 Description: his is a example of a singly linked list and basic functionality
 Course: COSC 2436 Programming Fundamentals III Data Structures
 Date: 10/01/2024
@@ -8,7 +8,6 @@ Date: 10/01/2024
 
 #include <iostream>
 #include "LinkedList.cpp"
-
 
 int main() {
     LinkedList myList;
