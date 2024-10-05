@@ -1,7 +1,4 @@
-class Node {
-public:
-    int data;
-    Node* next;
+#include "Node.h"
 
-    Node(int value) : data(value), next(nullptr) {}
-};
+// Constructor to initialize a node with a given value
+Node::Node(int value) : data(value), next(nullptr) {}
