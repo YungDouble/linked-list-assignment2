@@ -17,11 +17,11 @@ public:
     // FUnction to insert a node at the beginning of the linked list
     void insertAtBeginning(int value);
 
-    // FUnction to insert a node at the end of the linked list
+    // Function to insert a node at the end of the linked list
     void insertAtEnd(int value);
 
     // Function to insert a node at a specific position in the linked list
-    void insertAtPosition(int position, int value);
+    void insertAtPosition(int value, int position);
 
     // Function to print the linked list
     void printList();
