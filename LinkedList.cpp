@@ -1,15 +1,12 @@
 #include <iostream>
-#include "Node.cpp"
+#include "Node.h"
+#include "LinkedList.h"
 
-class LinkedList {
-public:
-    Node* head;
-
-    LinkedList() : head(nullptr) {}
+LinkedList::LinkedList() : head(nullptr) {}
 
     // Helper function to check if a position is valid
     // Returns true if the position is within the bounds of the current list
-    bool isValidPosition(int position) {
+    bool LinkedList::isValidPosition(int position) {
         if (position < 0) {
             return false;
         }
@@ -23,14 +20,14 @@ public:
     }
 
     // Function to insert a node at the beginning of the linked list
-    void insertAtBeginning(int value) {
+    void LinkedList::insertAtBeginning(int value) {
         Node* newNode = new Node(value);
         newNode->next = head;   // Point newNode's next to the current head
         head = newNode;         // Update head to be the new node
     }
 
     // Function to insert a node at the end of the linked list
-    void insertAtEnd(int value) {
+    void LinkedList::insertAtEnd(int value) {
         Node* newNode = new Node(value);
 
         if (head == nullptr) {
@@ -46,7 +43,7 @@ public:
     }
 
     // Function to insert a node at a specific position in the linked list
-    void insertAtPosition(int value, int position) {
+    void LinkedList::insertAtPosition(int value, int position) {
 
         // Test if valid position passed
         if (!isValidPosition(position)) {
@@ -79,7 +76,7 @@ public:
     }
 
     // Function to print the linked list
-    void printList() {
+    void LinkedList::printList() {
         Node* current = head;
         while (current != nullptr) {
             std::cout << current->data << " ";
@@ -87,4 +84,3 @@ public:
         }
         std::cout << std::endl;
     }
-};
