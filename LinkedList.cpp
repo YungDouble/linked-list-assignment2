@@ -7,6 +7,21 @@ public:
 
     LinkedList() : head(nullptr) {}
 
+    // Helper function to check if a position is valid
+    // Returns true if the position is within the bounds of the current list
+    bool isValidPosition(int position) {
+        if (position < 0) {
+            return false;
+        }
+        int currentIndex = 0;
+        Node* current = head;
+        while (current != nullptr) {
+            current = current->next;
+            currentIndex++;
+        }
+        return position <= currentIndex;    // Return true is position is valid
+    }
+
     // Function to insert a node at the beginning of the linked list
     void insertAtBeginning(int value) {
         Node* newNode = new Node(value);
@@ -32,6 +47,12 @@ public:
 
     // Function to insert a node at a specific position in the linked list
     void insertAtPosition(int value, int position) {
+
+        // Test if valid position passed
+        if (!isValidPosition(position)) {
+            std::cout << "Invalid Position" << std::endl;
+            return;
+        }
         if (position == 0) {
             insertAtBeginning(value); // If position is 0, insert at the beginning
             return;
@@ -39,15 +60,22 @@ public:
 
         Node* newNode = new Node(value);
         Node* current = head;
+        int currentIndex = 0;
 
-        for (int i = 0; i < position - 1 && current != nullptr; i++) {
-            current = current->next;    // Traverse the list to find the node before the position
+        // Traverse to the position before the desired one
+        while (current != nullptr && currentIndex < position - 1) {
+            current = current->next;
+            currentIndex++;
         }
 
-        if (current != nullptr) {
-            newNode->next = current->next;  // Link newNode to the next node
+        // If we have reached the end of the list, append the node at the end of the list
+        if (current == nullptr) {
+            insertAtEnd(value);
+        } else {
+            newNode->next = current->next;  // Link the new node to the current position
             current->next = newNode;        // Link the previous node to the newNode
         }
+
     }
 
     // Function to print the linked list
