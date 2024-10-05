@@ -12,18 +12,33 @@ Date: 10/01/2024
 int main() {
     LinkedList myList;
 
+    // Test inserting at the beginning
     myList.insertAtBeginning(3);
-    myList.insertAtEnd(7);
     myList.insertAtBeginning(1);
-    myList.insertAtEnd(9);
+    std::cout << "List after inserting at the beginning: ";
+    myList.printList();  // Expected: 1 3
 
-    std::cout << "Original List: ";
-    myList.printList();
+    // Test inserting at the end
+    myList.insertAtEnd(5);
+    myList.insertAtEnd(7);
+    std::cout << "List after inserting at the end: ";
+    myList.printList();  // Expected: 1 3 5 7
 
-    myList.insertAtPosition(5, 2); // Inserting 5 at position 2
+    // Test inserting at a specific position
+    myList.insertAtPosition(4, 2);  // Insert 4 at position 2
+    std::cout << "List after inserting 4 at position 2: ";
+    myList.printList();  // Expected: 1 3 4 5 7
 
-    std::cout << "List after insertion: ";
-    myList.printList();
+    // Test inserting at position 0 (beginning)
+    myList.insertAtPosition(0, 0);  // Insert 0 at position 0
+    std::cout << "List after inserting 0 at position 0: ";
+    myList.printList();  // Expected: 0 1 3 4 5 7
+
+    // Test inserting at an invalid position
+    myList.insertAtPosition(10, 10);  // Invalid position
+    std::cout << "Attempt to insert at invalid position: ";
+    myList.printList();  // Expected: 0 1 3 4 5 7
 
     return 0;
 }
+
